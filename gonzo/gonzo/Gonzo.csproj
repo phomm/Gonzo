@@ -5,4 +5,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gonzo.Lib\Gonzo.Lib\Gonzo.Lib.csproj" />
+  </ItemGroup>
+
 </Project>
