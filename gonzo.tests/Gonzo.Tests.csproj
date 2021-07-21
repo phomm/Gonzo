@@ -13,4 +13,8 @@
     <PackageReference Include="coverlet.collector" Version="3.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Gonzo.Lib\Gonzo.Lib\Gonzo.Lib.csproj" />
+  </ItemGroup>
+
 </Project>
