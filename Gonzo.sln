@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gonzo", "gonzo\gonzo.csproj", "{80E02616-C745-499F-B0EF-F6A678F3AB66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gonzo", "Gonzo\Gonzo.csproj", "{80E02616-C745-499F-B0EF-F6A678F3AB66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gonzo.tests", "..\gonzo.tests\gonzo.tests.csproj", "{3B2EDCCC-DC4B-4860-8DE2-98B63D0B00A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gonzo.Tests", "Gonzo.Tests\Gonzo.Tests.csproj", "{3B2EDCCC-DC4B-4860-8DE2-98B63D0B00A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gonzo.Lib", "..\Gonzo.Lib\Gonzo.Lib\Gonzo.Lib.csproj", "{D768925E-0C6A-4C10-8612-0F371B868C09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gonzo.Lib", "Gonzo.Lib\Gonzo.Lib.csproj", "{D768925E-0C6A-4C10-8612-0F371B868C09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
-gonzo.tests/bin/
-gonzo.tests/obj/
-gonzo/.vs/
-gonzo/gonzo/bin/
-gonzo/gonzo/obj/
-Gonzo.Lib/Gonzo.Lib/bin/
-Gonzo.Lib/Gonzo.Lib/obj/
+.vs/
+Gonzo.Tests/bin/
+Gonzo.Tests/obj/
+Gonzo/obj/
+Gonzo/bin/
+Gonzo.Lib/bin/
+Gonzo.Lib/obj/
