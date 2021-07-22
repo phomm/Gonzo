@@ -48,5 +48,24 @@ namespace Gonzo.Tests
             var actual = sequence.MaxOnesAfterRemoveItemByStateMachine();
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCaseSource(nameof(ProvidedTestCases))]
+        public void Test_maxOnesAfterRemoveItemBySplit_withProvidedTestCases((IEnumerable<int> candidate, int expected) testCase)
+        {
+            Test_maxOnesAfterRemoveItemBySplit(testCase.candidate, testCase.expected);
+        }
+
+        [TestCaseSource(nameof(CustomTestCases))]
+        public void Test_maxOnesAfterRemoveItemBySplit_withCustomTestCases((IEnumerable<int> candidate, int expected) testCase)
+        {
+            Test_maxOnesAfterRemoveItemBySplit(testCase.candidate, testCase.expected);
+        }
+
+        private void Test_maxOnesAfterRemoveItemBySplit(IEnumerable<int> candidate, int expected)
+        {
+            var sequence = new SequenceOfZeroesOnes(candidate);
+            var actual = sequence.MaxOnesAfterRemoveItemBySplit();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -42,5 +42,49 @@ namespace Gonzo.Lib
             var result = Math.Max(best, first + second);
             return result == _sequence.Count() ? result - 1 : result;
         }
+
+        public int MaxOnesAfterRemoveItemBySplit()
+        {
+            var list = _sequence.ToList();
+            var first = list.IndexOf(1);
+            var last = list.LastIndexOf(1);
+
+            if (first == -1)
+                return list.Count - 1;
+            if (first == last)
+                return 1;
+
+            var zeroIndices = new List<(int index, bool isSingle)> { (first - 1, false) };
+            for (var i = first + 1; i < last; i++)
+                if (list[i] == 0 && zeroIndices[^1].isSingle)
+                    if (zeroIndices[^1].index != i - 1)
+                        zeroIndices.Add((i, true));
+                    else
+                        zeroIndices[^1] = (zeroIndices[^1].index, false);
+                
+            zeroIndices.Add((last + 1, false));
+
+            var pairs = new List<(int start, int end)>();
+
+            if (zeroIndices.Count > 2)
+            {
+                pairs.Add((first - 1, zeroIndices.Skip(1).FirstOrDefault(x => !x.isSingle).index));
+                foreach (var (index, _) in zeroIndices.Where(x => !x.isSingle).Skip(2))
+                {
+                    pairs.Add((pairs[^1].end, index));
+                }
+            }
+            else
+                pairs.Add((first - 1, last + 1));
+
+            var best = 0;
+            foreach(var (start, end) in pairs)
+            {
+                for (var idx = zeroIndices.IndexOf((start, false)) + 1; idx < zeroIndices.IndexOf((end, false)); idx++)
+                    best = Math.Max(best, zeroIndices[idx].index - zeroIndices[idx - 1].index);
+            }
+
+            return best;
+        }
     }
 }
