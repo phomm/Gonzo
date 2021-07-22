@@ -17,7 +17,7 @@ namespace Gonzo
                 try
                 {
                     var sequence = new SequenceOfZeroesOnes(rawSequence);
-                    var result = sequence.CalculateMaxOnesAfterRemoveItem();
+                    var result = sequence.MaxOnesAfterRemoveItemByStateMachine();
                     Console.WriteLine($"Max Ones After Remove Any Item: {result}");
                 }
                 catch (Exception ex)
