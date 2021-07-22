@@ -27,49 +27,15 @@ namespace Gonzo.Lib
 
             foreach (var digit in _sequence)
             {
-                if (state == 0)
+                switch ((state, digit))
                 {
-                    if (digit == 1)
-                    {
-                        state = 1;
-                        first++;
-                    }
-                    continue;
-                }
-                if (state == 1)
-                {
-                    if (digit == 0)
-                        state = 2;
-                    else
-                        first++;
-                    continue;
-                }
-                if (state == 2)
-                {
-                    if (digit == 0)
-                    {
-                        best = Math.Max(best, first);
-                        first = 0;
-                        state = 0;
-                    }
-                    else
-                    {
-                        second++;
-                        state = 3;
-                    }
-                    continue;
-                }
-                if (state == 3)
-                {
-                    if (digit == 0)
-                    {
-                        best = Math.Max(best, first + second);
-                        first = second;
-                        second = 0;
-                    }
-                    else
-                        second++;
-                    continue;
+                    case (0, 1): (state, first) = (1, first + 1); break;
+                    case (1, 0): state = 2; break;
+                    case (1, 1): first++; break;
+                    case (2, 0): (best, first, state) = (Math.Max(best, first), 0, 0); break;
+                    case (2, 1): (second, state) = (second + 1, 3); break;
+                    case (3, 0): (best, first, second) = (Math.Max(best, first + second), second, 0); break;
+                    case (3, 1): second++; break;
                 }
             }
 
